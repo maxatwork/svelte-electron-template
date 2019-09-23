@@ -1,0 +1,36 @@
+{
+  "name": "svelte-electron-template",
+  "version": "0.0.1",
+  "description": "Svelte Electron Application Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "autobuild": "rollup -c -w",
+    "start": "electron .",
+    "start:dev": "concurrently \"npm run autobuild\" \"ELECTRON_RELOAD=yes electron .\"",
+    "start:browser": "concurrently \"npm run autobuild\" \"browser-sync public -w --no-ghost-mode\"",
+    "storybook": "start-storybook -s ./public",
+    "package": "electron-packager . --out=dist --ignore=.storybook --ignore=src --ignore=rollup.config.js --ignore=.gitignore --overwrite"
+  },
+  "author": "Maxim Vasilyev <max-at-work@yandex.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@storybook/svelte": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "concurrently": "^4.1.2",
+    "electron": "^6.0.9",
+    "electron-packager": "^14.0.6",
+    "electron-reload": "^1.5.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.21.4",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "svelte": "^3.12.1",
+    "svelte-loader": "^2.13.6"
+  }
+}
