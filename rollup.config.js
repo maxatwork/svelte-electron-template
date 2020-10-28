@@ -22,7 +22,7 @@ export default {
 		svelte({
 			dev: !production,
 			css: css => {
-				css.write('public/bundle.css');
+				css.write('bundle.css');
 			}
 		}),
 		production && terser()
